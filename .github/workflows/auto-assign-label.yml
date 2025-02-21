@@ -1,0 +1,50 @@
+name: Auto Assign and Label
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  assign-and-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issue to author when `_a` is detected
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body.toLowerCase();
+
+            if (body.includes("_a")) {
+              await github.rest.issues.addAssignees({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                assignees: [issue.user.login]
+              });
+            }
+
+      - name: Add labels when `_t` is detected
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body.toLowerCase();
+            let labelsToAdd = [];
+
+            if (body.includes("front-end _t")) {
+              labelsToAdd.push("front-end");
+            }
+            if (body.includes("back-end _t")) {
+              labelsToAdd.push("back-end");
+            }
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: labelsToAdd
+              });
+            }
