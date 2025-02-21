@@ -8,43 +8,38 @@ jobs:
   assign-and-label:
     runs-on: ubuntu-latest
     steps:
-      - name: Assign issue to author when `_a` is detected
+      - name: Assign issue to mentioned user before `_a`
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const issue = context.payload.issue;
-            const body = issue.body.toLowerCase();
-
-            if (body.includes("_a")) {
+            const assigneeMatch = issue.body.match(/@(\S+)\s*_a/); // Extracts username before `_a`
+            
+            if (assigneeMatch) {
+              const assignee = assigneeMatch[1]; // Extracted username
               await github.rest.issues.addAssignees({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                assignees: [issue.user.login]
+                assignees: [assignee]
               });
             }
 
-      - name: Add labels when `_t` is detected
+      - name: Add label based on `_t` keyword
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const issue = context.payload.issue;
-            const body = issue.body.toLowerCase();
-            let labelsToAdd = [];
-
-            if (body.includes("front-end _t")) {
-              labelsToAdd.push("front-end");
-            }
-            if (body.includes("back-end _t")) {
-              labelsToAdd.push("back-end");
-            }
-            if (labelsToAdd.length > 0) {
+            const labelMatch = issue.body.match(/(\S+)\s*_t/); // Extract label before `_t`
+            
+            if (labelMatch) {
+              const label = labelMatch[1]; // Extracted label
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                labels: labelsToAdd
+                labels: [label]
               });
             }
