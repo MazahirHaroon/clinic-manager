@@ -1,12 +1,10 @@
 import {
   Formik,
   Form,
-  Field,
   FormikHelpers,
-  FieldInputProps,
-  FieldMetaProps,
 } from 'formik';
 import { loginSchema } from '../schemas';
+import Input from './common/Input';
 import './Signup.css';
 
 const Signup = () => {
@@ -16,7 +14,7 @@ const Signup = () => {
     confirmPassword?: string;
   }
 
-  const onSubmit = async (
+  const handleSubmit = async (
     values: FormValues,
     actions: FormikHelpers<FormValues>
   ) => {
@@ -37,83 +35,23 @@ const Signup = () => {
             confirmPassword: '',
           }}
           validationSchema={loginSchema}
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
             <Form className='sign-up-form'>
-              <Field name='email'>
-                {({
-                  field,
-                  meta,
-                }: {
-                  field: FieldInputProps<string>;
-                  meta: FieldMetaProps<string>;
-                }) => (
-                  <div className='input-container'>
-                    <label className='signup-label' htmlFor='email'>
-                      Email
-                    </label>
-                    <input
-                      type='email'
-                      className={`signup-input ${meta.touched && meta.error ? 'input-error' : ''
-                        }`}
-                      {...field}
-                    />
-                    {meta.touched && meta.error && (
-                      <p className='error-message'>{meta.error}</p>
-                    )}
-                  </div>
-                )}
-              </Field>
-
-              <Field name='password'>
-                {({
-                  field,
-                  meta,
-                }: {
-                  field: FieldInputProps<string>;
-                  meta: FieldMetaProps<string>;
-                }) => (
-                  <div className='input-container'>
-                    <label className='signup-label' htmlFor='password'>
-                      Password
-                    </label>
-                    <input
-                      type='password'
-                      className={`signup-input ${meta.touched && meta.error ? 'input-error' : ''
-                        }`}
-                      {...field}
-                    />
-                    {meta.touched && meta.error && (
-                      <p className='error-message'>{meta.error}</p>
-                    )}
-                  </div>
-                )}
-              </Field>
-              <Field name='confirmPassword'>
-                {({
-                  field,
-                  meta,
-                }: {
-                  field: FieldInputProps<string>;
-                  meta: FieldMetaProps<string>;
-                }) => (
-                  <div className='input-container'>
-                    <label className='signup-label' htmlFor='confirmPassword'>
-                      Confirm Password
-                    </label>
-                    <input
-                      type='password'
-                      className={`signup-input ${meta.touched && meta.error ? 'input-error' : ''
-                        }`}
-                      {...field}
-                    />
-                    {meta.touched && meta.error && (
-                      <p className='error-message'>{meta.error}</p>
-                    )}
-                  </div>
-                )}
-              </Field>
+              <Input
+                label={'Email'}
+                name='email'
+                placeholder='john@example.com'
+                type='email'
+              />
+              <Input label={'Password'} name='password' type='password'>
+              </Input>
+              <Input
+                label={'Confirm Password'}
+                name='confirmPassword'
+                type='password'
+              />
               <button
                 className='submit-button'
                 disabled={isSubmitting}
