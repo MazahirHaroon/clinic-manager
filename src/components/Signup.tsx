@@ -1,16 +1,25 @@
-import { Formik, Form, Field, FormikHelpers, FieldInputProps, FieldMetaProps } from 'formik';
+import {
+  Formik,
+  Form,
+  Field,
+  FormikHelpers,
+  FieldInputProps,
+  FieldMetaProps,
+} from 'formik';
 import { loginSchema } from '../schemas';
 import './Signup.css';
 
 const Signup = () => {
-
   interface FormValues {
     email?: string;
     password?: string;
     confirmPassword?: string;
   }
 
-  const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
+  const onSubmit = async (
+    values: FormValues,
+    actions: FormikHelpers<FormValues>
+  ) => {
     console.log('submitted: ', values, actions);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
@@ -33,7 +42,13 @@ const Signup = () => {
           {({ isSubmitting }) => (
             <Form className='sign-up-form'>
               <Field name='email'>
-                {({ field, meta }: { field: FieldInputProps<string>; meta: FieldMetaProps<string> }) => (
+                {({
+                  field,
+                  meta,
+                }: {
+                  field: FieldInputProps<string>;
+                  meta: FieldMetaProps<string>;
+                }) => (
                   <div className='input-container'>
                     <label className='signup-label' htmlFor='email'>
                       Email
@@ -52,7 +67,13 @@ const Signup = () => {
               </Field>
 
               <Field name='password'>
-                {({ field, meta }: { field: FieldInputProps<string>; meta: FieldMetaProps<string> }) => (
+                {({
+                  field,
+                  meta,
+                }: {
+                  field: FieldInputProps<string>;
+                  meta: FieldMetaProps<string>;
+                }) => (
                   <div className='input-container'>
                     <label className='signup-label' htmlFor='password'>
                       Password
@@ -70,7 +91,13 @@ const Signup = () => {
                 )}
               </Field>
               <Field name='confirmPassword'>
-                {({ field, meta }: { field: FieldInputProps<string>; meta: FieldMetaProps<string> }) => (
+                {({
+                  field,
+                  meta,
+                }: {
+                  field: FieldInputProps<string>;
+                  meta: FieldMetaProps<string>;
+                }) => (
                   <div className='input-container'>
                     <label className='signup-label' htmlFor='confirmPassword'>
                       Confirm Password
