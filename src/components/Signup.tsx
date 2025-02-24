@@ -46,6 +46,17 @@ const Signup = () => {
                 type='email'
               />
               <Input label={'Password'} name='password' type='password'>
+                <ul className='password-note'>
+                  <li>Password should be <strong>at least 8 characters long</strong></li>
+                  <li>
+                    Password must include a mix of:
+                    <ul className="nested-list">
+                      <li><strong>Lowercase (a-z)</strong></li>
+                      <li><strong>Uppercase (A-Z)</strong></li>
+                      <li><strong>At least one special character (@#$%^&)</strong></li>
+                    </ul>
+                  </li>
+                </ul>
               </Input>
               <Input
                 label={'Confirm Password'}

@@ -66,15 +66,24 @@ body {
     border-radius: 4px;
 }
 
+.password-note {
+    padding-left: 20px;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.nested-list {    
+    padding-left: 20px;
+}
+
 .input-error {
     border: 1px solid red;
 }
 
 .error-message {
     color: red;
-    word-wrap: break-word; /* Breaks long words if necessary */
-    overflow-wrap: break-word;
-    max-width: 100%;
+    font-size: 0.9rem;
 }
 
 .submit-button {
