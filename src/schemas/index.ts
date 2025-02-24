@@ -1,6 +1,8 @@
 import * as yup from 'yup';
 
-const passwordRules: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&]).*$/;
+const upperCaseRule: RegExp = /^(?=.*[A-Z]).*$/;
+const lowerCaseRule: RegExp = /^(?=.*[a-z]).*$/;
+const specialCharacterRule: RegExp = /^(?=.*[@#$%^&]).*$/;
 // 1 upper case letter, 1 lower case letter, one of these special characters @#$%^&
 
 export const loginSchema = yup.object().shape({
@@ -12,8 +14,16 @@ export const loginSchema = yup.object().shape({
     .string()
     .min(8, 'Password should be minimum 8 characters long')
     .matches(
-      passwordRules,
-      'The password must be mix of upper case, lower case and any of these special characters @#$%^&'
+      upperCaseRule,
+      'The password must contain at least one upper case letter'
+    )
+    .matches(
+      lowerCaseRule,
+      'The password must contain at least one lower case letter'
+    )
+    .matches(
+      specialCharacterRule,
+      'The password must contain at least one of these special characters @#$%^&'
     )
     .required('This field is required'),
   confirmPassword: yup
