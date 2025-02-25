@@ -1,5 +1,6 @@
 import { useField } from 'formik';
 import { ReactNode } from 'react';
+import "./index.css";
 
 interface InputProps {
     label: string;
