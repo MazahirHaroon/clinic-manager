@@ -1,0 +1,29 @@
+.input-container {
+    margin: 10px 0;
+}
+
+.signup-label {
+    color: var(--clr-primary-dark);
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid var(--clr-primary-light);
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.signup-input:focus {
+    outline: none;
+    border: 2px solid var(--clr-primary-dark);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.input-error {
+    outline: 2px solid red;
+}

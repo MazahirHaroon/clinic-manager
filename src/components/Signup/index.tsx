@@ -3,9 +3,10 @@ import {
   Form,
   FormikHelpers,
 } from 'formik';
-import { loginSchema } from '../schemas';
-import Input from './common/Input';
-import './Signup.css';
+import { loginSchema } from '../../schemas';
+import Input from '../common/Input';
+import PrimaryButton from '../common/Button';
+import "./index.css"
 
 const Signup = () => {
   interface FormValues {
@@ -63,13 +64,11 @@ const Signup = () => {
                 name='confirmPassword'
                 type='password'
               />
-              <button
-                className='submit-button'
+              <PrimaryButton
+                content="Submit"
                 disabled={isSubmitting}
                 type='submit'
-              >
-                Submit
-              </button>
+              />
             </Form>
           )}
         </Formik>
