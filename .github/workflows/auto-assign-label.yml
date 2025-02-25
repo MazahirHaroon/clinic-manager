@@ -1,0 +1,45 @@
+name: Auto Assign and Label
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  assign-and-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issue to mentioned user before `_a`
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const assigneeMatch = issue.body.match(/@(\S+)\s*_a/); // Extracts username before `_a`
+            
+            if (assigneeMatch) {
+              const assignee = assigneeMatch[1]; // Extracted username
+              await github.rest.issues.addAssignees({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                assignees: [assignee]
+              });
+            }
+
+      - name: Add label based on `_t` keyword
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const labelMatch = issue.body.match(/(\S+)\s*_t/); // Extract label before `_t`
+            
+            if (labelMatch) {
+              const label = labelMatch[1]; // Extracted label
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: [label]
+              });
+            }
