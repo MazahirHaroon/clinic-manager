@@ -4,6 +4,7 @@ import {
   FormikHelpers,
 } from 'formik';
 import { loginSchema } from '../../schemas';
+import Logo from "../common/Logo";
 import Input from '../common/Input';
 import PrimaryButton from '../common/Button';
 import "./index.css"
@@ -27,7 +28,7 @@ const Signup = () => {
   return (
     <div className='container'>
       <div className='form-container'>
-        <h1>Clinic Manager</h1>
+        <Logo src={"../../../public/clinic-manager-logo-and-heading.png"} alt={"Clinic Manager"} />
         <h2>Sign Up</h2>
         <Formik<FormValues>
           initialValues={{
