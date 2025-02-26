@@ -7,8 +7,8 @@ import {
 import { loginSchema } from '../../schemas/loginSchema';
 
 import Logo from "../common/Logo";
-import Input from '../common/Input';
-import Select from '../common/Select';
+import Input from '../common/FormComponents/Input';
+import Select from '../common/FormComponents/select';
 import PrimaryButton from '../common/Button';
 
 import "./index.css"
