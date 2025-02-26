@@ -1,0 +1,34 @@
+name: Auto Close Issues on PR Merge
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  close-issue:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Extract issue number from PR description
+        id: extract_issue
+        run: |
+          ISSUE_NUMBER=$(echo "${{ github.event.pull_request.body }}" | grep -oP '(?<=fixes #)\d+')
+          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
+
+      - name: Close the linked issue
+        if: env.ISSUE_NUMBER != ''
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = process.env.ISSUE_NUMBER;
+            if (issue_number) {
+              github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue_number,
+                state: "closed"
+              });
+            }
