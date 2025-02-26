@@ -5,6 +5,7 @@ import { loginSchema } from '../../schemas/loginSchema';
 import Logo from '../common/Logo';
 import Input from '../common/FormComponents/Input';
 import Select from '../common/FormComponents/select';
+import CheckBox from '../common/FormComponents/checkbox';
 import PrimaryButton from '../common/Button/primary';
 
 import './index.css';
@@ -122,6 +123,9 @@ const Signup = () => {
                 name='confirmPassword'
                 type='password'
               />
+              <CheckBox
+                label={"I accept the terms of service"}
+                name="acceptedTos" />
               <PrimaryButton
                 content='Submit'
                 disabled={
