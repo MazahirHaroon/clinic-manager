@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 import { ReactNode } from 'react';
-import "./index.css";
+import './index.css';
 
 interface SelectProps {
     label: string;
@@ -19,8 +19,7 @@ const Select = ({ label, notes, ...props }: SelectProps) => {
                 {label}
             </label>
             <select
-                className={`signup-input ${meta.touched && meta.error ? 'input-error' : ''
-                    }`}
+                className={meta.touched && meta.error ? 'input-error' : ''}
                 {...field}
                 {...props}
             />

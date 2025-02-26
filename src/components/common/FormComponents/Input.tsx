@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 import { ReactNode } from 'react';
-import "./index.css";
+import './index.css';
 
 interface InputProps {
     label: string;
@@ -14,13 +14,12 @@ const Input = ({ label, children, ...props }: InputProps) => {
     const [field, meta] = useField(props);
 
     return (
-        <div>
+        <div className='input-container'>
             <label className='signup-label' htmlFor='password'>
                 {label}
             </label>
             <input
-                className={`signup-input ${meta.touched && meta.error ? 'input-error' : ''
-                    }`}
+                className={meta.touched && meta.error ? 'input-error' : ''}
                 {...field}
                 {...props}
             />
