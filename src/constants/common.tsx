@@ -4,13 +4,13 @@ interface HelpEmailProps {
     body: string;
 };
 
-export const HELP_EMAIL: HelpEmailProps = {
+const HELP_EMAIL: HelpEmailProps = {
     id: "help@example.com",
     subject: "Add Department of <Department here>",
     body: "Dear Admin, \n Please add the department of <Department Name here> to the list. \n Thank you."
 };
 
-export const DEPARTMENT_LIST: { key: number; value: string; label: string }[] = [
+const DEPARTMENT_LIST: { key: number; value: string; label: string }[] = [
     {
         key: 0,
         value: 'placeholder',
@@ -93,4 +93,7 @@ export const DEPARTMENT_LIST: { key: number; value: string; label: string }[] = 
     }
 ];
 
-export default DEPARTMENT_LIST;
+export {
+    HELP_EMAIL,
+    DEPARTMENT_LIST
+};
