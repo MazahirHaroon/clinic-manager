@@ -10,16 +10,16 @@ const departmentList = DEPARTMENT_LIST.filter((value => value.key !== 0)).map(({
 // 1 upper case letter, 1 lower case letter, one of these special characters @#$%^&
 
 export const loginSchema = yup.object().shape({
-  firstName: yup.string().required('This field is required'),
-  lastName: yup.string().required('This field is required'),
+  firstName: yup.string().required('Required'),
+  lastName: yup.string().required('Required'),
   email: yup
     .string()
     .email('Invalid email address')
-    .required('This field is required'),
+    .required('Required'),
   department: yup
     .string()
     .oneOf(departmentList, 'Please enter one of the choices')
-    .required('This field is required'),
+    .required('Required'),
   password: yup
     .string()
     .min(8, 'Password should be minimum 8 characters long')
@@ -35,11 +35,11 @@ export const loginSchema = yup.object().shape({
       specialCharacterRule,
       'The password must contain at least one of these special characters @#$%^&'
     )
-    .required('This field is required'),
+    .required('Required'),
   confirmPassword: yup
     .string()
     .oneOf([yup.ref('password'), undefined], 'Passwords must match')
-    .required('This field is required'),
+    .required('Required'),
   acceptedTos: yup
     .boolean()
     .oneOf([true], 'Please accept the terms of service'),
