@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { DEPARTMENT_LIST } from '@constants/common';
+import { DEPARTMENT_LIST } from 'src/constants/common';
 
 const upperCaseRule: RegExp = /^(?=.*[A-Z]).*$/;
 const lowerCaseRule: RegExp = /^(?=.*[a-z]).*$/;
