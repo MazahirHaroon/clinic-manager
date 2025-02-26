@@ -1,13 +1,13 @@
 import * as yup from 'yup';
 
-import { DEPARTMENT_LIST } from '../constants';
+import { DEPARTMENT_LIST } from '@constants/common';
 
 const upperCaseRule: RegExp = /^(?=.*[A-Z]).*$/;
 const lowerCaseRule: RegExp = /^(?=.*[a-z]).*$/;
 const specialCharacterRule: RegExp = /^(?=.*[@#$%^&]).*$/;
 
 const departmentList = DEPARTMENT_LIST.filter((value => value.key !== 0)).map(({label}) => label);
-// 1 upper case letter, 1 lower case letter, one of these special characters @#$%^&
+
 
 export const loginSchema = yup.object().shape({
   firstName: yup.string().required('Required'),
