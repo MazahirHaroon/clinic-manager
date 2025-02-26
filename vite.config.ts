@@ -7,8 +7,12 @@ export default defineConfig({
   resolve: {
     alias: {
       src: '/src',
-      "common-components": "/src/components/common",
-      components: "/src/components",
+      "@public/*": "./public/*",
+      "@constants/*": "./src/constants/*",
+      "@common-components": "/src/components/common",
+      "@common-components/*": "/src/components/common/*",
+      "@components": "/src/components",
+      "@components/*": "/src/components/*",
     }
   }
 })
