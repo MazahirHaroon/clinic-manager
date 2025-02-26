@@ -53,11 +53,3 @@
     color: var(--clr-primary-light);
     margin-top: 5px;
 }
-
-
-.error-message {
-    font-size: var(--minor-font-size);
-    color: var(--clr-primary-dark);
-    overflow-wrap: break-word;
-    max-width: 100%;
-}
