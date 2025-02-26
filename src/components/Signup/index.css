@@ -41,16 +41,17 @@
     flex-direction: column;    
 }
 
-.password-note {
-    padding-left: 20px;
+.note {
     font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.note-list {    
+    padding-left: 20px;
     color: var(--clr-primary-light);
     margin-top: 5px;
 }
 
-.nested-list {    
-    padding-left: 20px;
-}
 
 .error-message {
     font-size: 0.9rem;
