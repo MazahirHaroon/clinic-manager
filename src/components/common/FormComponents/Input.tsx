@@ -7,7 +7,7 @@ interface InputProps {
     name: string;
     placeholder?: string;
     type: string;
-    children?: ReactNode
+    children?: ReactNode;
 }
 
 const Input = ({ label, children, ...props }: InputProps) => {
