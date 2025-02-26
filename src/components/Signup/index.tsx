@@ -4,7 +4,7 @@ import { loginSchema } from '../../schemas/loginSchema';
 
 import { CheckBox, Input, Logo, PrimaryButton, Select } from '@common-components';
 
-import { HELP_EMAIL, DEPARTMENT_LIST } from "@constants/common";
+import { HELP_EMAIL, DEPARTMENT_LIST } from 'src/constants/common';
 
 import './index.css';
 
