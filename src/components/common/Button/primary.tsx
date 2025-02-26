@@ -9,7 +9,7 @@ interface PrimaryButtonProps {
 
 const PrimaryButton = ({ type, content, ...props }: PrimaryButtonProps) => (
     <>
-        <button className='submit-button' type={type} {...props}>{JSON.stringify(props.disabled)}</button>
+        <button className='submit-button' type={type} {...props}>{content}</button>
     </>
 );
 
