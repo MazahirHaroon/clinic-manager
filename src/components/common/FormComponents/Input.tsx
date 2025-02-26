@@ -14,7 +14,7 @@ const Input = ({ label, children, ...props }: InputProps) => {
     const [field, meta] = useField(props);
 
     return (
-        <div className='input-container'>
+        <div>
             <label className='signup-label' htmlFor='password'>
                 {label}
             </label>

@@ -1,18 +1,14 @@
-.input-container {
-    margin: 10px 0;
-}
-
 .signup-label {
     color: var(--clr-primary-dark);
     font-weight: bold;
     display: block;
-    margin: 10px 0;
+    margin: 0.5em 0;
 }
 
 .signup-input {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0.5rem 0;
     border: 1px solid var(--clr-primary-light);
     background-color: #f9f9f9;
     border-radius: 4px;
