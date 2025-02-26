@@ -29,12 +29,8 @@
     padding: 0;
 }
 
-.form-container > h1 {
-    font-size: 2.19rem;
-}
-
 .form-container > h2 {
-    font-size: 1.9rem;
+    font-size: var(--secondary-heading-font-size);
 }
 
 .sign-up-form {
@@ -43,7 +39,7 @@
 }
 
 .note {
-    font-size: 0.9rem;
+    font-size: var(--minor-font-size);
     margin-top: 5px;
 }
 
@@ -55,7 +51,7 @@
 
 
 .error-message {
-    font-size: 0.9rem;
+    font-size: var(--minor-font-size);
     color: var(--clr-primary-dark);
     overflow-wrap: break-word;
     max-width: 100%;
