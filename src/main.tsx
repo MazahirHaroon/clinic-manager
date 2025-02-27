@@ -5,9 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 
 import './index.css';
 
-import Home from 'src/pages/Home';
-import SignUp from 'src/pages/SignUp';
-import NotFound from '@components/common/NotFound';
+import { Home, NotFound, SignUp } from '@pages';
 
 const router = createBrowserRouter([
   {

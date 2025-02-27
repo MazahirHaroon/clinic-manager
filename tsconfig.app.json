@@ -5,6 +5,7 @@
       "src/*": ["./src/*"],
       "@public/*": ["./public/*"],
       "@constants/*": ["./src/constants/*"],
+      "@pages": ["./src/pages/index"],
       "@clinic-ui": ["./src/components/clinic-ui/index"],
       "@components": ["./src/components/index"],
       "@components/*": ["./src/components/*"]

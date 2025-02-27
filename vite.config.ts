@@ -9,6 +9,7 @@ export default defineConfig({
       src: '/src',
       '@public/*': './public/*',
       '@constants/*': './src/constants/*',
+      '@pages/index': '/src/pages/index',
       '@clinic-ui/index': '/src/components/clinic-ui',
       '@components/index': '/src/components',
       '@components/*': '/src/components/*',
