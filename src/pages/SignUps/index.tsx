@@ -2,7 +2,13 @@ import { Formik, Form, FormikHelpers } from 'formik';
 
 import { loginSchema } from '../../schemas/loginSchema';
 
-import { CheckBox, Input, Logo, PrimaryButton, Select } from '@common-components';
+import {
+  CheckBox,
+  Input,
+  Logo,
+  PrimaryButton,
+  Select,
+} from '@common-components';
 
 import { HELP_EMAIL, DEPARTMENT_LIST } from 'src/constants/common';
 
@@ -120,8 +126,9 @@ const Signup = () => {
                 type='password'
               />
               <CheckBox
-                label={"I accept the terms of service"}
-                name="acceptedTos" />
+                label={'I accept the terms of service'}
+                name='acceptedTos'
+              />
               <PrimaryButton
                 content='Submit'
                 disabled={
