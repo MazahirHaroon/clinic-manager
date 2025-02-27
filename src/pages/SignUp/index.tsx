@@ -1,10 +1,11 @@
 import { Formik, Form, FormikHelpers } from 'formik';
 
-import { loginSchema } from '../../schemas/loginSchema';
+import { loginSchema } from '@schemas';
 
-import { CheckBox, Input, Logo, PrimaryButton, Select } from '@common-components';
+import Logo from '@components/Logo';
+import { CheckBox, Input, PrimaryButton, Select } from '@clinic-ui';
 
-import { HELP_EMAIL, DEPARTMENT_LIST } from 'src/constants/common';
+import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
 
 import './index.css';
 
@@ -120,8 +121,9 @@ const Signup = () => {
                 type='password'
               />
               <CheckBox
-                label={"I accept the terms of service"}
-                name="acceptedTos" />
+                label={'I accept the terms of service'}
+                name='acceptedTos'
+              />
               <PrimaryButton
                 content='Submit'
                 disabled={
