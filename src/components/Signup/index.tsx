@@ -32,7 +32,7 @@ const Signup = () => {
     <div className='container'>
       <div className='form-container'>
         <Logo
-          src={'../../../public/clinic-manager-logo-and-heading.png'}
+          src={'public/clinic-manager-logo-and-heading.png'}
           alt={'Clinic Manager'}
         />
         <h2>Sign Up</h2>
