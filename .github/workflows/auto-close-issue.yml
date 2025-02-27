@@ -14,7 +14,13 @@ jobs:
       - name: Extract issue number from PR description
         id: extract_issue
         run: |
-          ISSUE_NUMBER=$(echo "${{ github.event.pull_request.body }}" |  grep -oE 'Fixes #[0-9]+' | grep -oE '[0-9]+')
+          ISSUE_NUMBER=$(echo "${{ github.event.pull_request.body }}" | grep -oE 'Fixes #[0-9]+' | grep -oE '[0-9]+')
+
+          if [[ -z "$ISSUE_NUMBER" ]]; then
+            echo "No issue number found."
+            exit 1
+          fi
+
           echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
 
       - name: Close the linked issue
