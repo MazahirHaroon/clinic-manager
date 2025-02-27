@@ -5,9 +5,9 @@
       "src/*": ["./src/*"],
       "@public/*": ["./public/*"],
       "@constants/*": ["./src/constants/*"],
-      "@common-components": ["./src/components/common/index"],
-      "@common-components/*": ["./src/components/common/*"],
-      "@components/*": ["./src/components/*"],
+      "@clinic-ui": ["./src/components/clinic-ui/index"],
+      "@components": ["./src/components/index"],
+      "@components/*": ["./src/components/*"]
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",

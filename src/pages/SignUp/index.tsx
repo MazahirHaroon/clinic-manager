@@ -2,13 +2,8 @@ import { Formik, Form, FormikHelpers } from 'formik';
 
 import { loginSchema } from '../../schemas/loginSchema';
 
-import {
-  CheckBox,
-  Input,
-  Logo,
-  PrimaryButton,
-  Select,
-} from '@common-components';
+import Logo from '@components/Logo';
+import { CheckBox, Input, PrimaryButton, Select } from '@clinic-ui';
 
 import { HELP_EMAIL, DEPARTMENT_LIST } from 'src/constants/common';
 
