@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
 import Logo from '@components/Logo';
-import { PrimaryButton } from '@clinic-ui';
+import { PrimaryButton } from 'src/components/ClinicUI';
 
 import './index.css';
 
