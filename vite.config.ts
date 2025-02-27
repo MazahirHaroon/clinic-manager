@@ -11,7 +11,7 @@ export default defineConfig({
       '@constants': '/src/constants',
       '@pages': '/src/pages/index',
       '@schemas': '/src/schemas/index',
-      '@clinic-ui': '/src/components/clinic-ui/index',
+      '@clinic-ui': '/src/components/ClinicUI/index',
       '@components': '/src/components',
     },
   },
