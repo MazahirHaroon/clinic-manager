@@ -1,6 +1,6 @@
 import { Formik, Form, FormikHelpers } from 'formik';
 
-import { loginSchema } from '@schemas';
+import { loginSchema } from '@utils/schemas';
 
 import Logo from '@components/Logo';
 import {
