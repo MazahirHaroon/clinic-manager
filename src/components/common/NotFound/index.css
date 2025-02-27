@@ -24,8 +24,3 @@
     color: var(--secondary-heading-font-size);
     margin-bottom: 2rem;
 }
-
-.button-group {
-    display: flex;
-    gap: 1rem;
-}
