@@ -3,13 +3,12 @@
     "baseUrl": "./",
     "paths": {
       "src/*": ["./src/*"],
-      "@public/*": ["./public/*"],
-      "@constants/*": ["./src/constants/*"],
       "@pages": ["./src/pages/index"],
-      "@schema": ["./src/schemas/index"],
+      "@schemas": ["./src/schemas/index"],
       "@clinic-ui": ["./src/components/clinic-ui/index"],
-      "@components": ["./src/components/index"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@public/*": ["./public/*"],
+      "@constants/*": ["./src/constants/*"]
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
