@@ -7,13 +7,12 @@ export default defineConfig({
   resolve: {
     alias: {
       src: '/src',
-      '@public/*': './public/*',
-      '@constants/*': './src/constants/*',
-      '@pages/index': '/src/pages/index',
-      '@schema': '/src/schema/index',
-      '@clinic-ui/index': '/src/components/clinic-ui',
-      '@components/index': '/src/components',
-      '@components/*': '/src/components/*',
+      '@public': '/public',
+      '@constants': '/src/constants',
+      '@pages': '/src/pages/index',
+      '@schemas': '/src/schemas/index',
+      '@clinic-ui': '/src/components/clinic-ui/index',
+      '@components': '/src/components',
     },
   },
 });
