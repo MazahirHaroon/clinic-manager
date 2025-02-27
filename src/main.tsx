@@ -7,10 +7,12 @@ import './index.css'
 
 import Home from '@components/Home';
 import Signup from '@components/Signup';
+import NotFound from '@components/common/NotFound';
 
 const router = createBrowserRouter([{
   path: "/",
-  element: <Home />
+  element: <Home />,
+  errorElement: <NotFound />
 }, {
   path: "/Signup",
   element: <Signup />
