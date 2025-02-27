@@ -2,12 +2,12 @@ import { ReactNode } from 'react';
 import "./index.css";
 
 interface PrimaryButtonProps {
-    type: "submit" | "reset" | "button";
     content: string | ReactNode
-    disabled: boolean;
+    type?: "submit" | "reset" | "button";
+    disabled?: boolean;
 }
 
-const PrimaryButton = ({ type, content, ...props }: PrimaryButtonProps) => (
+const PrimaryButton = ({ type = "button", content, ...props }: PrimaryButtonProps) => (
     <>
         <button className='submit-button' type={type} {...props}>{content}</button>
     </>
