@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 
-import Logo from '../common/Logo';
+import Logo from '../../components/common/Logo';
 import PrimaryButton from '@common-components/Button/primary';
 
 import './index.css';
