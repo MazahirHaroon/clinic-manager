@@ -47,3 +47,28 @@ src/
 
 - As of now, we have a separate file along with the components for the styles. We will soon be using TailwindCSS so those will be deleted.
 - As of now no hooks are added.
+
+### Path Aliases
+
+- `@clinic-ui`: UI Components Directory
+- `@components`: Components Directory
+- `@pages`: Pages Directory
+- `@utils`: Utils Directory
+- `@constants`: Constants Directory
+
+
+
+### Currently Developed Screens
+
+- **SignUp Page**
+
+   <img width="1792" alt="signup-page" src="https://github.com/user-attachments/assets/e2b6039f-c46b-49d3-b8a0-97f7bc437a69" />
+
+- **Home Page** (Will add more components)
+
+   <img width="1792" alt="home-page" src="https://github.com/user-attachments/assets/935de846-8823-4b8a-bb79-e0bf8e10da61" />
+
+- **Not Found Page**
+
+   <img width="1792" alt="not_found-page" src="https://github.com/user-attachments/assets/570e3a98-088f-4ecd-b916-8bdc32712d96" />
+
