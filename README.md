@@ -2,6 +2,13 @@
 
 A **Doctor-Patient Management System** for booking appointments, handling medical queries, and managing patient records. Features include **online slot booking, document uploads, emergency contacts, and doctor dashboards** for viewing appointments and responding to patient queries.
 
+### To Run
+
+```bash
+   npm install
+   npm run dev
+```
+
 ### Folder Structure
 
 ```graphql
@@ -55,7 +62,6 @@ src/
 - `@pages`: Pages Directory
 - `@utils`: Utils Directory
 - `@constants`: Constants Directory
-
 
 
 ### Currently Developed Screens
