@@ -1,16 +1,26 @@
 import { ReactNode } from 'react';
-import "./index.css";
 
 interface PrimaryButtonProps {
-    content: string | ReactNode
-    type?: "submit" | "reset" | "button";
-    disabled?: boolean;
+  content: string | ReactNode;
+  type?: 'submit' | 'reset' | 'button';
+  disabled?: boolean;
 }
 
-const PrimaryButton = ({ type = "button", content, ...props }: PrimaryButtonProps) => (
-    <>
-        <button className='submit-button' type={type} {...props}>{content}</button>
-    </>
+const PrimaryButton = ({
+  type = 'button',
+  content,
+  disabled,
+  ...props
+}: PrimaryButtonProps) => (
+  <button
+    type={type}
+    disabled={disabled}
+    className={`py-3 px-5 mt-2 bg-primary-light text-white rounded-md transition duration-200 ease-in-out
+            hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`}
+    {...props}
+  >
+    {content}
+  </button>
 );
 
 export default PrimaryButton;
