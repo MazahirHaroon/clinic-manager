@@ -9,6 +9,16 @@ A **Doctor-Patient Management System** for booking appointments, handling medica
    npm run dev
 ```
 
+## **Tech Stack**
+
+- **[React](https://react.dev/)** (v19)
+- **[TypeScript](https://www.typescriptlang.org/)** (v5)
+- **[React Router](https://reactrouter.com/)** (v7) – Declarative routing for navigation management.  
+- **[Formik](https://formik.org/)** (v2) – Simplifies form handling and validation.  
+- **[Yup](https://github.com/jquense/yup)** (v1) – Schema-based validation for form inputs.  
+- **[Tailwind CSS](https://tailwindcss.com/)** (v4)
+- **[Vite](https://vitejs.dev/)** (v6)
+
 ### Folder Structure
 
 ```graphql
