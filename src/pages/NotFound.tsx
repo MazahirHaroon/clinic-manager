@@ -10,11 +10,9 @@ const NotFound = () => {
         <Logo src='/clinic-manager-logo-and-heading.png' alt='Clinic Manager' />
       </div>
 
-      <h1 className='text-6xl font-bold text-(--color-primary-dark) mb-2'>
-        404
-      </h1>
+      <h1 className='text-6xl font-bold text-primary-dark) mb-2'>404</h1>
 
-      <p className='text-xl text-(--color-primary-dark) mb-6'>
+      <p className='text-xl text-primary-dark) mb-6'>
         {"Oops! The page you're looking for doesn't exist."}
       </p>
 
