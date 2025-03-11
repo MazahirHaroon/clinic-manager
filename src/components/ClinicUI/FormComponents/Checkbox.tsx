@@ -14,9 +14,9 @@ const CheckBox = ({ label, ...props }: InputProps) => {
         type='checkbox'
         {...field}
         {...props}
-        className='w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-blue-500'
+        className='w-5 h-5 bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-blue-500'
       />
-      <span className='text-gray-700'>{label}</span>
+      <span className='text-primary-dark'>{label}</span>
       {meta.touched && meta.error ? (
         <p className='text-red-500 text-sm'>{meta.error}</p>
       ) : null}
