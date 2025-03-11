@@ -68,13 +68,13 @@ src/
 
 - **SignUp Page**
 
-   <img width="1792" alt="signup-page" src="https://github.com/user-attachments/assets/e2b6039f-c46b-49d3-b8a0-97f7bc437a69" />
+   <img width="1792" alt="signup-page" src="https://github.com/user-attachments/assets/62dca79a-3b1a-4f3e-9c50-f2f7b2b42fee" />
 
 - **Home Page** (Will add more components)
 
-   <img width="1792" alt="home-page" src="https://github.com/user-attachments/assets/935de846-8823-4b8a-bb79-e0bf8e10da61" />
+   <img width="1791" alt="home-page" src="https://github.com/user-attachments/assets/8ebeb67e-baee-4075-a1ee-72fe31d97325" />
 
 - **Not Found Page**
 
-   <img width="1792" alt="not_found-page" src="https://github.com/user-attachments/assets/570e3a98-088f-4ecd-b916-8bdc32712d96" />
+   <img width="1789" alt="not_found-page" src="https://github.com/user-attachments/assets/ede521a9-cee3-4654-91d5-183867451c2f" />
 
