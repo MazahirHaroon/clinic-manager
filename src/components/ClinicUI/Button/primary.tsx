@@ -15,8 +15,8 @@ const PrimaryButton = ({
   <button
     type={type}
     disabled={disabled}
-    className={`py-3 px-5 mt-2 bg-primary-light) text-white rounded-md transition duration-200 ease-in-out
-            hover:bg-primary-dark) disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`}
+    className={`py-3 px-5 mt-2 bg-primary-light text-white rounded-md transition duration-200 ease-in-out
+            hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`}
     {...props}
   >
     {content}
