@@ -37,7 +37,7 @@ const Signup = () => {
           src={'public/clinic-manager-logo-and-heading.png'}
           alt={'Clinic Manager'}
         />
-        <h2 className='text-2xl font-semibold text-(--color-primary-dark) text-center mb-4'>
+        <h2 className='text-2xl font-semibold text-primary-dark) text-center mb-4'>
           Sign Up
         </h2>
 
@@ -86,7 +86,7 @@ const Signup = () => {
                   <div className='text-sm mt-1'>
                     <a
                       href={`mailto:${HELP_EMAIL.id}?subject="${HELP_EMAIL.subject}&body=${HELP_EMAIL.body}`}
-                      className='text-(--color-primary-dark) underline'
+                      className='text-primary-dark) underline'
                     >
                       Contact us if your department is not present in the list
                     </a>
@@ -101,7 +101,7 @@ const Signup = () => {
               </Select>
 
               <Input label='Password' name='password' type='password'>
-                <ul className='text-sm text-(--color-primary-dark) mt-1 space-y-1'>
+                <ul className='text-sm text-primary-dark) mt-1 space-y-1'>
                   <li>
                     Password should be{' '}
                     <strong>at least 8 characters long</strong>
