@@ -32,7 +32,7 @@ const Signup = () => {
 
   return (
     <div className='flex justify-center items-center min-h-screen bg-primary-light'>
-      <div className='flex flex-col w-full max-w-xl px-8 pb-6 pt-1 mt-6 bg-white shadow-lg rounded-3xl'>
+      <div className='flex flex-col w-full max-w-xl px-12 pb-6 pt-1 mt-6 bg-white shadow-lg rounded-3xl'>
         <Logo
           src={'public/clinic-manager-logo-and-heading.png'}
           alt={'Clinic Manager'}
