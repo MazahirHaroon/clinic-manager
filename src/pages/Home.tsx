@@ -17,7 +17,7 @@ const Home = () => {
           Your digital assistant for seamless clinic management.
         </p>
         <div className='flex gap-6'>
-          <Link to='./Signup'>
+          <Link to='./signupl'>
             <PrimaryButton content='Sign Up' type='button' />
           </Link>
           <PrimaryButton content='Login' type='button' />
