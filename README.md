@@ -28,7 +28,7 @@ src/
 │   ├── Logo.tsx
 │   ├── ... other components
 │
-│── pages/(App pages/screens)
+│── pages/ (App pages/screens)
 │   ├── Home.tsx
 │   ├── SignUp.tsx
 │   ├── NotFound.tsx
@@ -39,20 +39,19 @@ src/
 │   ├── ... other constant files
 │
 │── utils/(Utility functions/helpers)
-│   ├── schemas/                 # Yup validation schemas
+│   ├── schemas/ (Yup validation schemas)
 │   │   ├── loginSchema.ts
 │   ├── ... other utility files
 │
-│── hooks/(Custom React hooks)
+│── hooks/ (Custom React hooks)
 │   ├── ... hooks
-│
-│── main.tsx
+│── index.css (Global styles, theme variables, and Tailwind setup) 
+│── main.tsx 
 │── router.tsx (Application routing)
 ```
 
 **Note:**
 
-- As of now, we have a separate file along with the components for the styles. We will soon be using TailwindCSS so those will be deleted.
 - As of now no hooks are added.
 
 ### Path Aliases
