@@ -1,5 +1,4 @@
 import { Formik, Form, FormikHelpers } from 'formik';
-
 import { loginSchema } from '@utils/schemas';
 
 import Logo from '@components/Logo';
@@ -9,10 +8,7 @@ import {
   PrimaryButton,
   Select,
 } from 'src/components/ClinicUI';
-
 import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
-
-import './index.css';
 
 const Signup = () => {
   interface FormValues {
@@ -35,13 +31,16 @@ const Signup = () => {
   };
 
   return (
-    <div className='container'>
-      <div className='form-container'>
+    <div className='flex justify-center items-center min-h-screen bg-blue-100'>
+      <div className='flex flex-col w-full max-w-xl px-8 pb-6 pt-1 mt-6 bg-white shadow-lg rounded-3xl'>
         <Logo
           src={'public/clinic-manager-logo-and-heading.png'}
           alt={'Clinic Manager'}
         />
-        <h2>Sign Up</h2>
+        <h2 className='text-2xl font-semibold text-(--color-primary-dark) text-center mb-4'>
+          Sign Up
+        </h2>
+
         <Formik<FormValues>
           initialValues={{
             firstName: '',
@@ -56,16 +55,16 @@ const Signup = () => {
           onSubmit={handleSubmit}
         >
           {({ touched, errors, isSubmitting }) => (
-            <Form className='sign-up-form'>
-              <div className='multiple-inputs'>
+            <Form className='flex flex-col space-y-4'>
+              <div className='flex gap-5'>
                 <Input
-                  label={'First Name'}
+                  label='First Name'
                   name='firstName'
                   placeholder='Ayisha'
                   type='text'
                 />
                 <Input
-                  label={'Last Name'}
+                  label='Last Name'
                   name='lastName'
                   placeholder='Nishara'
                   type='text'
@@ -73,19 +72,21 @@ const Signup = () => {
               </div>
 
               <Input
-                label={'Email'}
+                label='Email'
                 name='email'
                 placeholder='ayisha@example.com'
                 type='email'
               />
+
               <Select
-                label={'Department'}
+                label='Department'
                 name='department'
                 placeholder='Please select a department'
                 notes={
-                  <div className='note'>
+                  <div className='text-sm mt-1'>
                     <a
                       href={`mailto:${HELP_EMAIL.id}?subject="${HELP_EMAIL.subject}&body=${HELP_EMAIL.body}`}
+                      className='text-(--color-primary-dark) underline'
                     >
                       Contact us if your department is not present in the list
                     </a>
@@ -98,15 +99,16 @@ const Signup = () => {
                   </option>
                 ))}
               </Select>
-              <Input label={'Password'} name='password' type='password'>
-                <ul className='note note-list'>
+
+              <Input label='Password' name='password' type='password'>
+                <ul className='text-sm text-(--color-primary-dark) mt-1 space-y-1'>
                   <li>
                     Password should be{' '}
                     <strong>at least 8 characters long</strong>
                   </li>
                   <li>
                     Password must include a mix of:
-                    <ul className='note-list'>
+                    <ul className='pl-4 list-disc'>
                       <li>
                         <strong>Lowercase (a-z)</strong>
                       </li>
@@ -120,15 +122,18 @@ const Signup = () => {
                   </li>
                 </ul>
               </Input>
+
               <Input
-                label={'Confirm Password'}
+                label='Confirm Password'
                 name='confirmPassword'
                 type='password'
               />
+
               <CheckBox
-                label={'I accept the terms of service'}
+                label='I accept the terms of service'
                 name='acceptedTos'
               />
+
               <PrimaryButton
                 content='Submit'
                 disabled={
