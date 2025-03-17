@@ -8,7 +8,8 @@
       "@components/*": ["./src/components/*"],
       "@public/*": ["./public/*"],
       "@constants/*": ["./src/constants/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@conf/*": ["./src/conf/*"]
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
