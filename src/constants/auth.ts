@@ -7,3 +7,8 @@ export interface SignUpFormValues {
   confirmPassword: string;
   acceptedTos: boolean;
 }
+
+export interface LoginFormValues {
+  email: string;
+  password: string;
+}
