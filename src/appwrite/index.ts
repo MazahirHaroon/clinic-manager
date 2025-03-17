@@ -1,4 +1,4 @@
-import authService from '@appwrite/auth';
-import databaseService from '@appwrite/config';
+import authService from './auth';
+import databaseService from './config';
 
 export { authService, databaseService };
