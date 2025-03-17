@@ -14,6 +14,7 @@ export default defineConfig({
       '@utils': '/src/utils',
       '@clinic-ui': '/src/components/ClinicUI/index',
       '@components': '/src/components',
+      '@conf': '/src/conf',
     },
   },
 });
