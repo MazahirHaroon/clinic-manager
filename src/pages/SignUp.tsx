@@ -8,6 +8,9 @@ import {
   PrimaryButton,
   Select,
 } from 'src/components/ClinicUI';
+
+import authService from '@appwrite/auth';
+
 import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
 import { SignUpFormValues } from '@constants/auth';
 
@@ -16,9 +19,22 @@ const Signup = () => {
     values: SignUpFormValues,
     actions: FormikHelpers<SignUpFormValues>
   ) => {
-    console.log('submitted: ', values, actions);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
+    try {
+      const accountName = `${values.firstName} ${values.lastName}`;
+      await authService.createAccount(
+        values.email,
+        values.password,
+        accountName
+      );
+      actions.resetForm();
+    } catch (error) {
+      const errorSource = 'Signup Component :: handleSubmit()';
+      if (error instanceof Error) {
+        throw new Error(`${errorSource} ${error.message}`);
+      } else {
+        throw new Error(errorSource);
+      }
+    }
   };
 
   return (
@@ -45,7 +61,7 @@ const Signup = () => {
           validationSchema={loginSchema}
           onSubmit={handleSubmit}
         >
-          {({ touched, errors, isSubmitting }) => (
+          {({ errors, isSubmitting }) => (
             <Form className='flex flex-col space-y-4'>
               <div className='flex gap-5'>
                 <Input
@@ -127,11 +143,7 @@ const Signup = () => {
 
               <PrimaryButton
                 content='Submit'
-                disabled={
-                  isSubmitting ||
-                  Object.keys(errors).length > 0 ||
-                  Object.keys(touched).length > 0
-                }
+                disabled={isSubmitting || Object.keys(errors).length > 0}
                 type='submit'
               />
             </Form>
