@@ -20,7 +20,9 @@ const Home = () => {
           <Link to='./signup'>
             <PrimaryButton content='Sign Up' type='button' />
           </Link>
-          <PrimaryButton content='Login' type='button' />
+          <Link to='./login'>
+            <PrimaryButton content='Login' type='button' />
+          </Link>
         </div>
       </div>
     </div>
