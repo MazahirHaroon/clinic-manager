@@ -6,16 +6,14 @@ const upperCaseRule: RegExp = /^(?=.*[A-Z]).*$/;
 const lowerCaseRule: RegExp = /^(?=.*[a-z]).*$/;
 const specialCharacterRule: RegExp = /^(?=.*[@#$%^&]).*$/;
 
-const departmentList: string[] = DEPARTMENT_LIST.filter((value => value.key !== 0)).map(({label}) => label);
-
+const departmentList: string[] = DEPARTMENT_LIST.filter(
+  (value) => value.key !== 0
+).map(({ value }) => value);
 
 export const loginSchema = yup.object().shape({
   firstName: yup.string().required('Required'),
   lastName: yup.string().required('Required'),
-  email: yup
-    .string()
-    .email('Invalid email address')
-    .required('Required'),
+  email: yup.string().email('Invalid email address').required('Required'),
   department: yup
     .string()
     .oneOf(departmentList, 'Please enter one of the choices')
