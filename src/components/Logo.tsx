@@ -9,7 +9,7 @@ const logo = (props: LogoProps) => {
   return (
     <Link to='/'>
       <div className='w-sm my-0 mx-auto'>
-        <img {...props} className='w-[93%]' />
+        <img {...props} />
       </div>
     </Link>
   );
