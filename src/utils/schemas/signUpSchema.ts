@@ -10,7 +10,7 @@ const departmentList: string[] = DEPARTMENT_LIST.filter(
   (value) => value.key !== 0
 ).map(({ value }) => value);
 
-export const loginSchema = yup.object().shape({
+export const signUpSchema = yup.object().shape({
   firstName: yup.string().required('Required'),
   lastName: yup.string().required('Required'),
   email: yup.string().email('Invalid email address').required('Required'),

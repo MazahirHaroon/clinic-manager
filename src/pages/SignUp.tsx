@@ -1,5 +1,5 @@
 import { Formik, Form, FormikHelpers } from 'formik';
-import { loginSchema } from '@utils/schemas';
+import { signUpSchema } from '@utils/schemas';
 
 import AuthFormContainer from '@components/AuthFormContainer';
 import {
@@ -44,7 +44,7 @@ const Signup = () => {
           confirmPassword: '',
           acceptedTos: false,
         }}
-        validationSchema={loginSchema}
+        validationSchema={signUpSchema}
         onSubmit={handleSubmit}
       >
         {({ errors, isSubmitting }) => (
