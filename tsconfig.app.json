@@ -10,7 +10,7 @@
       "@constants/*": ["./src/constants/*"],
       "@utils/*": ["./src/utils/*"],
       "@conf/*": ["./src/conf/*"],
-      "@appwrite/*": ["./src/appwrite/*"]
+      "@appwrite": ["./src/appwrite/index"]
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",

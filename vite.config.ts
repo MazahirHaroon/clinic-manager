@@ -15,7 +15,7 @@ export default defineConfig({
       '@clinic-ui': '/src/components/ClinicUI/index',
       '@components': '/src/components',
       '@conf': '/src/conf',
-      '@appwrite': '/src/appwrite',
+      '@appwrite': '/src/appwrite/index',
     },
   },
 });
