@@ -9,21 +9,12 @@ import {
   Select,
 } from 'src/components/ClinicUI';
 import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
+import { SignUpFormValues } from '@constants/auth';
 
 const Signup = () => {
-  interface FormValues {
-    firstName: string;
-    lastName: string;
-    email: string;
-    department: string;
-    password: string;
-    confirmPassword: string;
-    acceptedTos: boolean;
-  }
-
   const handleSubmit = async (
-    values: FormValues,
-    actions: FormikHelpers<FormValues>
+    values: SignUpFormValues,
+    actions: FormikHelpers<SignUpFormValues>
   ) => {
     console.log('submitted: ', values, actions);
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -41,7 +32,7 @@ const Signup = () => {
           Sign Up
         </h2>
 
-        <Formik<FormValues>
+        <Formik<SignUpFormValues>
           initialValues={{
             firstName: '',
             lastName: '',
