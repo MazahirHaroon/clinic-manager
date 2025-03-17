@@ -8,8 +8,8 @@ interface LogoProps {
 const logo = (props: LogoProps) => {
   return (
     <Link to='/'>
-      <div className='w-sm my-0 mx-auto'>
-        <img {...props} className='w-[93%]' />
+      <div className='flex justify-center'>
+        <img className='max-w-[50%]' {...props} />
       </div>
     </Link>
   );

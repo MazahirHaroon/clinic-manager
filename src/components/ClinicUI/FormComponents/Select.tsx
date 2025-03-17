@@ -16,7 +16,7 @@ const Select = ({ label, notes, ...props }: SelectProps) => {
     <div className='flex flex-col'>
       <label className='text-primary-dark font-medium mb-1'>{label}</label>
       <select
-        className={`w-full px-4 py-2 border rounded-md text-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+        className={`w-full px-4 py-2 border rounded-md text-black bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 ${
           meta.touched && meta.error ? 'border-red-500' : 'border-gray-300'
         }`}
         {...field}

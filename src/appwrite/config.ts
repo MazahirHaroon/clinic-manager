@@ -37,6 +37,24 @@ export class DataBaseService {
       }
     }
   }
+
+  async getUser(id: string, query: string[] = []) {
+    try {
+      return await this.databases.getDocument(
+        conf.appwriteClinicDatabaseId,
+        conf.appwriteClinicUserCollectionId,
+        id,
+        query
+      );
+    } catch (error) {
+      const errorSource = 'Database Service :: getUser()';
+      if (error instanceof Error) {
+        throw new Error(`${errorSource} ${error.message}`);
+      } else {
+        throw new Error(errorSource);
+      }
+    }
+  }
 }
 
 const databaseService = new DataBaseService();
