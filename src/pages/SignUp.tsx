@@ -9,10 +9,7 @@ import {
   Select,
 } from 'src/components/ClinicUI';
 
-import authService from '@appwrite/auth';
-import service from '@appwrite/config';
-
-import { omitKeyValues } from '@utils/common';
+import { handleSignup } from '@utils/auth';
 
 import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
 import { SignUpFormValues } from '@constants/auth';
@@ -23,11 +20,7 @@ const Signup = () => {
     actions: FormikHelpers<SignUpFormValues>
   ) => {
     try {
-      await authService.createAccount(
-        values.email,
-        values.password,
-        `${values.firstName} ${values.lastName}`
-      );
+      await handleSignup(values);
       actions.resetForm();
     } catch (error) {
       const errorSource = 'Signup Component :: handleSubmit()';
