@@ -10,6 +10,9 @@ import {
 } from 'src/components/ClinicUI';
 
 import authService from '@appwrite/auth';
+import service from '@appwrite/config';
+
+import { omitKeyValues } from '@utils/common';
 
 import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
 import { SignUpFormValues } from '@constants/auth';
@@ -20,11 +23,10 @@ const Signup = () => {
     actions: FormikHelpers<SignUpFormValues>
   ) => {
     try {
-      const accountName = `${values.firstName} ${values.lastName}`;
       await authService.createAccount(
         values.email,
         values.password,
-        accountName
+        `${values.firstName} ${values.lastName}`
       );
       actions.resetForm();
     } catch (error) {
