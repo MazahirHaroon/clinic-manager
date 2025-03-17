@@ -1,15 +1,22 @@
-import { Formik, Form } from 'formik';
+import { Formik, Form, FormikHelpers } from 'formik';
+import { Link } from 'react-router';
 import { loginSchema } from '@utils/schemas';
 
 import AuthForm from 'src/components/AuthFormContainer';
 import { Input, PrimaryButton } from 'src/components/ClinicUI';
 
 import { LoginFormValues } from '@constants/auth';
+import { handleLogin } from '@utils/auth';
 
 const Login = () => {
-  const handleSubmit = () => {
+  const handleSubmit = async (
+    values: LoginFormValues,
+    actions: FormikHelpers<LoginFormValues>
+  ) => {
     try {
-      // Logic to be added
+      const userDetails = await handleLogin(values);
+      // Next step use userDetail to show the Dashboard
+      actions.resetForm();
     } catch (error) {
       const errorSource = 'Login Component :: handleSubmit()';
       if (error instanceof Error) {
@@ -46,6 +53,12 @@ const Login = () => {
               disabled={isSubmitting || Object.keys(errors).length > 0}
               type='submit'
             />
+            <p>
+              {'Do not have an account? '}
+              <Link to='/signup'>
+                <span className='font-bold underline'>Sign Up</span>
+              </Link>
+            </p>
           </Form>
         )}
       </Formik>
