@@ -1,6 +1,6 @@
 import { authService, databaseService } from '@appwrite';
 import { omitKeyValues } from '@utils/common';
-import { SignUpFormValues } from '@constants/auth';
+import { LoginFormValues, SignUpFormValues } from '@constants/auth';
 
 export const handleSignup = async (values: SignUpFormValues) => {
   try {
@@ -15,9 +15,24 @@ export const handleSignup = async (values: SignUpFormValues) => {
       values
     );
 
-    return await databaseService.createUser(userAccount.$id, userProps);
+    return await databaseService.createUser(userAccount.userId, userProps);
   } catch (error) {
     const errorSource = 'Utils ::  Auth :: handleSignup()';
+    if (error instanceof Error) {
+      throw new Error(`${errorSource} :: ${error.message}`);
+    } else {
+      throw new Error(errorSource);
+    }
+  }
+};
+
+export const handleLogin = async (values: LoginFormValues) => {
+  try {
+    const userAccount = await authService.login(values.email, values.password);
+
+    return await databaseService.getUser(userAccount.userId);
+  } catch (error) {
+    const errorSource = 'Utils ::  Auth :: handleLogin()';
     if (error instanceof Error) {
       throw new Error(`${errorSource} :: ${error.message}`);
     } else {
