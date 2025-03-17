@@ -18,6 +18,7 @@ A **Doctor-Patient Management System** for booking appointments, handling medica
 - **[Yup](https://github.com/jquense/yup)** (v1) – Schema-based validation for form inputs.  
 - **[Tailwind CSS](https://tailwindcss.com/)** (v4)
 - **[Vite](https://vitejs.dev/)** (v6)
+- **[Appwrite](https://cloud.appwrite.io)** - Backend-as-a-service for authentication and database management.
 
 ### Folder Structure
 
@@ -44,9 +45,10 @@ src/
 │   ├── NotFound.tsx
 │   ├── ... other pages
 │
-│── constants/
-│   ├── common.ts
-│   ├── ... other constant files
+│── appwrite/ (Appwrite services)
+│   ├── auth.ts
+│   ├── config.ts
+│   ├── index.ts(Re-exports all appwrite services)
 │
 │── utils/(Utility functions/helpers)
 │   ├── schemas/ (Yup validation schemas)
@@ -55,9 +57,16 @@ src/
 │
 │── hooks/ (Custom React hooks)
 │   ├── ... hooks
+│
 │── index.css (Global styles, theme variables, and Tailwind setup) 
-│── main.tsx 
+|
 │── router.tsx (Application routing)
+│
+│── constants/
+│   ├── common.ts
+│   ├── ... other constant files
+|
+│── main.tsx 
 ```
 
 **Note:**
