@@ -17,7 +17,7 @@ export class AuthService {
     } catch (error) {
       const errorSource = 'Appwrite Service :: createAccount()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        throw new Error(`${errorSource} :: ${error.message}`);
       } else {
         throw new Error(errorSource);
       }
@@ -30,7 +30,7 @@ export class AuthService {
     } catch (error) {
       const errorSource = 'Appwrite Service :: login()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        throw new Error(`${errorSource} :: ${error.message}`);
       } else {
         throw new Error(errorSource);
       }
@@ -43,7 +43,7 @@ export class AuthService {
     } catch (error) {
       const errorSource = 'Appwrite Service :: getCurrentUser()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        throw new Error(`${errorSource} :: ${error.message}`);
       } else {
         throw new Error(errorSource);
       }
@@ -56,7 +56,7 @@ export class AuthService {
     } catch (error) {
       const errorSource = 'Appwrite Service :: logOut()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        throw new Error(`${errorSource} :: ${error.message}`);
       } else {
         throw new Error(errorSource);
       }
