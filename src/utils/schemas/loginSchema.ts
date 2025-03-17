@@ -31,7 +31,7 @@ export const loginSchema = yup.object().shape({
     )
     .matches(
       specialCharacterRule,
-      'The password must contain at least one of these special characters @#$%^&'
+      'The password must contain at least one of these special characters !@#$%^&'
     )
     .required('Required'),
   confirmPassword: yup

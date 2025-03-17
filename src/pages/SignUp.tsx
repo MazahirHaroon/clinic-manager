@@ -108,7 +108,7 @@ const Signup = () => {
                       <strong>Uppercase (A-Z)</strong>
                     </li>
                     <li>
-                      <strong>At least one special character (@#$%^&)</strong>
+                      <strong>At least one special character (!@#$%^&)</strong>
                     </li>
                   </ul>
                 </li>
