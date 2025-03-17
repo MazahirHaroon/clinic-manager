@@ -15,7 +15,7 @@ export const handleSignup = async (values: SignUpFormValues) => {
       values
     );
 
-    return await databaseService.createUser(userAccount.$id, userProps);
+    return await databaseService.createUser(userAccount.userId, userProps);
   } catch (error) {
     const errorSource = 'Utils ::  Auth :: handleSignup()';
     if (error instanceof Error) {
