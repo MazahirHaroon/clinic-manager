@@ -1,7 +1,7 @@
 import conf from '../conf/appwriteConf';
 import { Client, Databases } from 'appwrite';
 
-import { CreateUserProps } from '@constants/auth';
+import { SignUpFormValues } from '@constants/auth';
 
 export class DataBaseService {
   client = new Client();
@@ -14,7 +14,13 @@ export class DataBaseService {
     this.databases = new Databases(this.client);
   }
 
-  async createUser(id: string, data: CreateUserProps) {
+  async createUser(
+    id: string,
+    data: Pick<
+      SignUpFormValues,
+      'firstName' | 'lastName' | 'email' | 'department'
+    >
+  ) {
     try {
       return await this.databases.createDocument(
         conf.appwriteClinicDatabaseId,
