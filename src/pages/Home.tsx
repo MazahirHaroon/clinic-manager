@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className='flex justify-center items-center min-h-screen bg-primary-light'>
       <div className='flex flex-col items-center text-center bg-white p-12 rounded-2xl shadow-lg max-w-md'>
-        <Logo />
+        <Logo className='flex justify-center mx-auto w-[50%]' />
         <h1 className='text-3xl font-bold text-primary-dark mt-1 mb-2'>
           Welcome to Clinic Manager
         </h1>

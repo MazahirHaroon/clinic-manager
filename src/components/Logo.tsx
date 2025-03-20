@@ -8,9 +8,7 @@ interface LogoProps {
 const Logo = ({ className }: LogoProps) => {
   return (
     <Link to='/'>
-      <div
-        className={`flex justify-center mx-auto ${className ? className : ''}`}
-      >
+      <div className={className}>
         <img
           src={'public/clinic-manager-logo-and-heading.png'}
           alt={'Clinic Manager'}
