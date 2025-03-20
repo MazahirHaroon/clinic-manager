@@ -1,11 +1,17 @@
+import React from 'react';
 import { Link } from 'react-router';
 
-const Logo = () => {
+interface LogoProps {
+  className?: React.ComponentProps<'div'>['className'];
+}
+
+const Logo = ({ className }: LogoProps) => {
   return (
     <Link to='/'>
-      <div className='flex justify-center'>
+      <div
+        className={`flex justify-center mx-auto ${className ? className : ''}`}
+      >
         <img
-          className='max-w-[50%]'
           src={'public/clinic-manager-logo-and-heading.png'}
           alt={'Clinic Manager'}
         />
