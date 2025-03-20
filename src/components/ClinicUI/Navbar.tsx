@@ -6,7 +6,7 @@ const Navbar = () => {
       <Logo src={'heading-clinic-manager.png'} className='w-48' />
       <div className='flex gap-6 text-base'>
         <Link className='text-primary-light hover:text-primary-dark' to='/'>
-          Home
+          Dashboard
         </Link>
         <Link className='text-primary-light hover:text-primary-dark' to='/'>
           Profile
