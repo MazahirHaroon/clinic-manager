@@ -3,16 +3,17 @@ import { Link } from 'react-router';
 
 interface LogoProps {
   className?: React.ComponentProps<'div'>['className'];
+  src?: string;
 }
 
-const Logo = ({ className }: LogoProps) => {
+const Logo = ({
+  className,
+  src = 'public/clinic-manager-logo-and-heading.png',
+}: LogoProps) => {
   return (
     <Link to='/'>
       <div className={className}>
-        <img
-          src={'public/clinic-manager-logo-and-heading.png'}
-          alt={'Clinic Manager'}
-        />
+        <img src={src} alt={'Clinic Manager'} />
       </div>
     </Link>
   );
