@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import Logo from '@components/Logo';
+
 const Navbar = () => {
   return (
     <nav className='flex justify-center flex-col lg:flex-row lg:justify-between items-center min-h-24 flex-wrap px-10 pr-10 bg-light-background'>
@@ -17,9 +18,7 @@ const Navbar = () => {
         >
           Profile
         </Link>
-        <Link className='text-primary-light hover:text-primary-dark' to='/'>
-          Logout
-        </Link>
+        <div className='text-primary-light hover:text-primary-dark'>Logout</div>
       </div>
     </nav>
   );
