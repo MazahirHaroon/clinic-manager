@@ -1,10 +1,11 @@
 import { createBrowserRouter } from 'react-router';
-import { Home, NotFound, SignUp, Login } from '@pages';
+import { Welcome, NotFound, SignUp, Login, Profile, Dashboard } from '@pages';
+import { Layout } from '@clinic-ui';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />,
+    path: '/welcome',
+    element: <Welcome />,
     errorElement: <NotFound />,
   },
   {
@@ -14,5 +15,18 @@ export const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
+      },
+    ],
   },
 ]);
