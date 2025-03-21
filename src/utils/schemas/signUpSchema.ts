@@ -4,7 +4,7 @@ import { DEPARTMENT_LIST } from 'src/constants/common';
 
 const upperCaseRule: RegExp = /^(?=.*[A-Z]).*$/;
 const lowerCaseRule: RegExp = /^(?=.*[a-z]).*$/;
-const specialCharacterRule: RegExp = /^(?=.*[@#$%^&]).*$/;
+const specialCharacterRule: RegExp = /^(?=.*[!@#$%^&]).*$/;
 
 const departmentList: string[] = DEPARTMENT_LIST.filter(
   (value) => value.key !== 0
