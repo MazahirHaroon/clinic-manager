@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router';
+import { NavLink } from 'react-router';
 import Logo from '@components/Logo';
 
 const Navbar = () => {
@@ -10,9 +10,9 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive ? `text-primary-dark` : `text-primary-light`
-            } hover:font-bold`
+            } hover:underline`
           }
-          to='/dashboard'
+          to='/'
         >
           Dashboard
         </NavLink>
@@ -20,13 +20,15 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive ? `text-primary-dark` : `text-primary-light`
-            } hover:font-bold`
+            } hover:underline`
           }
           to='/profile'
         >
           Profile
         </NavLink>
-        <div className='text-primary-light hover:font-bold'>Logout</div>
+        <div className='text-primary-light cursor-pointer hover:underline'>
+          Logout
+        </div>
       </div>
     </nav>
   );
