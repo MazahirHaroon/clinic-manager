@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import Logo from '@components/Logo';
 import { PrimaryButton } from '@components/ClinicUI';
 
-const Home = () => {
+const Welcome = () => {
   return (
     <div className='flex justify-center items-center min-h-screen bg-primary-light'>
       <div className='flex flex-col items-center text-center bg-white p-12 rounded-2xl shadow-lg max-w-md'>
@@ -26,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Welcome;
