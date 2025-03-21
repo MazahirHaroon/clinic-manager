@@ -14,10 +14,10 @@ const Welcome = () => {
           Your digital assistant for seamless clinic management.
         </p>
         <div className='flex gap-6'>
-          <Link to='./signup'>
+          <Link to='/signup'>
             <PrimaryButton content='Sign Up' type='button' />
           </Link>
-          <Link to='./login'>
+          <Link to='/login'>
             <PrimaryButton content='Login' type='button' />
           </Link>
         </div>
