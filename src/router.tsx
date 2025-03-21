@@ -17,10 +17,12 @@ export const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: '/',
     element: <Layout />,
+    errorElement: <NotFound />,
     children: [
       {
-        path: '/dashboard',
+        path: '',
         element: <Dashboard />,
       },
       {
