@@ -2,12 +2,12 @@ import { ReactNode } from 'react';
 
 import Logo from '@components/Logo';
 
-interface AuthFormContainerProps {
+interface AuthContainerProps {
   title: string;
   children: ReactNode;
 }
 
-const AuthFormContainer = ({ title, children }: AuthFormContainerProps) => {
+const AuthContainer = ({ title, children }: AuthContainerProps) => {
   return (
     <div className='flex justify-center items-center min-h-screen bg-primary-light'>
       <div className='flex flex-col w-full max-w-xl px-12 pb-6 pt-1 mt-6 bg-white shadow-lg rounded-3xl'>
@@ -21,4 +21,4 @@ const AuthFormContainer = ({ title, children }: AuthFormContainerProps) => {
   );
 };
 
-export default AuthFormContainer;
+export default AuthContainer;
