@@ -20,7 +20,6 @@ const Login = () => {
       actions.resetForm();
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
         const errorMessage = ERROR_MESSAGE[(error as AppwriteError).type]
           ? ERROR_MESSAGE[(error as AppwriteError).type]
           : 'Something went wrong';

@@ -8,7 +8,6 @@ export const useLogOut = () => {
   const handleLogout = async () => {
     try {
       const currentUser = await authService.getCurrentUser();
-      console.log(currentUser);
       if (currentUser) {
         await authService.logOut();
       }
