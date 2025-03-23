@@ -31,7 +31,7 @@ export class DataBaseService {
     } catch (error) {
       const errorSource = 'Database Service :: createUser()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        throw error;
       } else {
         throw new Error(errorSource);
       }
@@ -49,7 +49,7 @@ export class DataBaseService {
     } catch (error) {
       const errorSource = 'Database Service :: getUser()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        throw error;
       } else {
         throw new Error(errorSource);
       }
