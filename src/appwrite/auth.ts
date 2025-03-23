@@ -52,7 +52,7 @@ export class AuthService {
 
   async logOut() {
     try {
-      return await this.account.deleteSessions();
+      await this.account.deleteSessions();
     } catch (error) {
       const errorSource = 'Appwrite Service :: logOut()';
       if (error instanceof Error) {
