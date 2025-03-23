@@ -2,33 +2,39 @@ import { Formik, Form, FormikHelpers } from 'formik';
 import { Link } from 'react-router';
 import { loginSchema } from '@utils/schemas';
 
-import AuthForm from 'src/components/AuthFormContainer';
-import { Input, PrimaryButton } from 'src/components/ClinicUI';
+import { Input, PrimaryButton, AuthContainer } from '@clinic-ui';
 
-import { LoginFormValues } from '@constants/auth';
-import { handleLogin } from '@utils/auth';
+import { useLogin } from 'src/hooks/useLogin';
+
+import { LoginFormValues, ERROR_MESSAGE, AppwriteError } from '@constants/auth';
 
 const Login = () => {
+  const { handleLogin } = useLogin();
+
   const handleSubmit = async (
     values: LoginFormValues,
     actions: FormikHelpers<LoginFormValues>
   ) => {
     try {
-      const userDetails = await handleLogin(values);
-      // Next step use userDetail to show the Dashboard
+      await handleLogin(values);
       actions.resetForm();
     } catch (error) {
-      const errorSource = 'Login Component :: handleSubmit()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        console.log(error);
+        const errorMessage = ERROR_MESSAGE[(error as AppwriteError).type]
+          ? ERROR_MESSAGE[(error as AppwriteError).type]
+          : 'Something went wrong';
+        actions.setStatus(errorMessage);
       } else {
-        throw new Error(errorSource);
+        actions.setStatus('Something went wrong');
       }
+    } finally {
+      actions.setSubmitting(false);
     }
   };
 
   return (
-    <AuthForm title={'Login'}>
+    <AuthContainer title={'Login'}>
       <Formik<LoginFormValues>
         initialValues={{
           email: '',
@@ -37,7 +43,7 @@ const Login = () => {
         validationSchema={loginSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, isSubmitting }) => (
+        {({ errors, status, isSubmitting }) => (
           <Form className='flex flex-col space-y-4'>
             <Input
               label='Email'
@@ -47,6 +53,10 @@ const Login = () => {
             />
 
             <Input label='Password' name='password' type='password' />
+
+            {status && (
+              <p className='text-red-500 text-sm font-medium'>{status}</p>
+            )}
 
             <PrimaryButton
               content='Login'
@@ -62,7 +72,7 @@ const Login = () => {
           </Form>
         )}
       </Formik>
-    </AuthForm>
+    </AuthContainer>
   );
 };
 

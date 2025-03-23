@@ -1,8 +1,8 @@
-import Navbar from './Layout/Navbar';
+import AuthContainer from './AuthContainer';
+import Navbar from './Navbar';
 import Input from './FormComponents/Input';
 import Select from './FormComponents/Select';
 import CheckBox from './FormComponents/Checkbox';
 import PrimaryButton from './Button/Primary';
-import Layout from './Layout';
 
-export { Navbar, CheckBox, Input, PrimaryButton, Select, Layout };
+export { AuthContainer, Navbar, CheckBox, Input, PrimaryButton, Select };

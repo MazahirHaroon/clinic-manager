@@ -1,20 +1,25 @@
 import { Formik, Form, FormikHelpers } from 'formik';
 import { signUpSchema } from '@utils/schemas';
 
-import AuthFormContainer from '@components/AuthFormContainer';
 import {
+  AuthContainer,
   CheckBox,
   Input,
   PrimaryButton,
   Select,
-} from 'src/components/ClinicUI';
+} from '@clinic-ui';
 
-import { handleSignup } from '@utils/auth';
-
+import { useSignup } from 'src/hooks/useSignup';
 import { HELP_EMAIL, DEPARTMENT_LIST } from '@constants/common';
-import { SignUpFormValues } from '@constants/auth';
+import {
+  SignUpFormValues,
+  ERROR_MESSAGE,
+  AppwriteError,
+} from '@constants/auth';
+import { Link } from 'react-router';
 
 const Signup = () => {
+  const { handleSignup } = useSignup();
   const handleSubmit = async (
     values: SignUpFormValues,
     actions: FormikHelpers<SignUpFormValues>
@@ -23,17 +28,22 @@ const Signup = () => {
       await handleSignup(values);
       actions.resetForm();
     } catch (error) {
-      const errorSource = 'Signup Component :: handleSubmit()';
       if (error instanceof Error) {
-        throw new Error(`${errorSource} ${error.message}`);
+        const errorType = (error as AppwriteError).type;
+        const errorMessage = ERROR_MESSAGE[errorType]
+          ? ERROR_MESSAGE[errorType]
+          : 'Something went wrong';
+        actions.setStatus(errorMessage);
       } else {
-        throw new Error(errorSource);
+        actions.setStatus('Something went wrong');
       }
+    } finally {
+      actions.setSubmitting(false);
     }
   };
 
   return (
-    <AuthFormContainer title={'Sign Up'}>
+    <AuthContainer title={'Sign Up'}>
       <Formik<SignUpFormValues>
         initialValues={{
           firstName: '',
@@ -47,7 +57,7 @@ const Signup = () => {
         validationSchema={signUpSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, isSubmitting }) => (
+        {({ errors, status, isSubmitting }) => (
           <Form className='flex flex-col space-y-4'>
             <div className='flex gap-5'>
               <Input
@@ -126,15 +136,26 @@ const Signup = () => {
               name='acceptedTos'
             />
 
+            {status && (
+              <p className='text-red-500 text-sm font-medium'>{status}</p>
+            )}
+
             <PrimaryButton
               content='Submit'
               disabled={isSubmitting || Object.keys(errors).length > 0}
               type='submit'
             />
+
+            <p>
+              {'Already have an account? '}
+              <Link to='/login'>
+                <span className='font-bold underline'>Log In</span>
+              </Link>
+            </p>
           </Form>
         )}
       </Formik>
-    </AuthFormContainer>
+    </AuthContainer>
   );
 };
 
