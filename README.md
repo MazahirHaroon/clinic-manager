@@ -88,6 +88,10 @@ src/
 
    <img width="1792" alt="signup-page" src="https://github.com/user-attachments/assets/62dca79a-3b1a-4f3e-9c50-f2f7b2b42fee" />
 
+- **Login Page**
+
+   <img width="1792" alt="login-page" src="https://github.com/user-attachments/assets/5f53d477-8a57-48f2-bbf4-7fedf4bac93c" />
+
 - **Home Page** (Will add more components)
 
    <img width="1791" alt="home-page" src="https://github.com/user-attachments/assets/8ebeb67e-baee-4075-a1ee-72fe31d97325" />
