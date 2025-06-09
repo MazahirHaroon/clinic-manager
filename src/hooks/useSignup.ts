@@ -1,15 +1,14 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router';
 
 import { authService, databaseService } from '@appwrite';
-import UserContext from 'src/context/UserContext';
+import { useUser } from 'src/context/UserContext';
 import { omitKeyValues } from '@utils/common';
 
 import { SignUpFormValues, UserValues } from '@constants/auth';
 
 export const useSignup = () => {
   const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
+  const { setUser } = useUser();
   const handleSignup = async (values: SignUpFormValues) => {
     try {
       const { email, password, firstName, lastName } = values;

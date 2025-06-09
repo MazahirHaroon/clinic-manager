@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface SignUpFormValues {
   firstName: string;
   lastName: string;

@@ -19,6 +19,7 @@ const Login = () => {
       await handleLogin(values);
       actions.resetForm();
     } catch (error) {
+      console.log(error);
       if (error instanceof Error) {
         const errorMessage = ERROR_MESSAGE[(error as AppwriteError).type]
           ? ERROR_MESSAGE[(error as AppwriteError).type]

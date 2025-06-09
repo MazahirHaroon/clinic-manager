@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router';
 
 import { authService, databaseService } from '@appwrite';
-import UserContext from 'src/context/UserContext';
 
 import { LoginFormValues, UserValues } from '@constants/auth';
+import { useUser } from 'src/context/UserContext';
 
 export const useLogin = () => {
   const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
+  const { setUser } = useUser();
 
   const handleLogin = async ({ email, password }: LoginFormValues) => {
     try {

@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 import { UserValues } from '@constants/auth';
 
 export interface UserContextType {
@@ -6,9 +6,11 @@ export interface UserContextType {
   setUser: React.Dispatch<React.SetStateAction<UserValues | null>>;
 }
 
-const UserContext = createContext<UserContextType>({
+export const UserContext = createContext<UserContextType>({
   user: null,
   setUser: () => {},
 });
 
-export default UserContext;
+export const useUser = () => {
+  return useContext(UserContext);
+};

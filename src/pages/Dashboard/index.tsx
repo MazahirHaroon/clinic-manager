@@ -1,14 +1,17 @@
-import { useContext } from 'react';
 import { Link } from 'react-router';
-import UserContext from 'src/context/UserContext';
+import { useUser } from 'src/context/UserContext';
 
 const Dashboard = () => {
-  const { user } = useContext(UserContext);
+  const { user } = useUser();
   if (!user)
     return (
-      <h1>
-        <Link to='/login'>Please Login</Link>
-      </h1>
+      <p>
+        You are logged out. Click{' '}
+        <span className='link'>
+          <Link to='/login'> here</Link>
+        </span>{' '}
+        Login again
+      </p>
     );
 
   const { firstName, lastName, department } = user;

@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router';
 
 import { authService } from '@appwrite';
+import { useUser } from 'src/context/UserContext';
 
 export const useLogOut = () => {
   const navigate = useNavigate();
+  const { setUser } = useUser();
 
   const handleLogout = async () => {
     try {
@@ -11,6 +13,7 @@ export const useLogOut = () => {
       if (currentUser) {
         await authService.logOut();
       }
+      setUser(null);
       void navigate('/welcome');
     } catch (error) {
       const errorSource = 'Hook ::  useLogOut :: handleLogout()';

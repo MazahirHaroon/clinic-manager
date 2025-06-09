@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import UserContext from './UserContext';
+import { UserContext } from './UserContext';
 import { UserValues } from '@constants/auth';
 
 export interface UserContextProviderProps {
